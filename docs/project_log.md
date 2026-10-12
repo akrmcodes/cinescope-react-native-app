@@ -2,6 +2,21 @@
 
 Newest entries first.
 
+## 2026-10-13 — Phase 4.9 Settings
+
+**Phase:** Phase 4.9  
+**Status:** Done
+
+### What changed
+
+- [`src/features/settings/SettingsScreen.tsx`](../src/features/settings/SettingsScreen.tsx) — **Dark mode** `Switch` on `themeStore`; **Sign out** calls `signOut`, `router.dismissAll()` when possible, then `router.replace('/login')`.
+
+### Experiment note
+
+- Time spent: (fill after review)
+- Comprehension: (fill after review)
+- Confusing part:
+
 ## 2026-10-13 — Phase 4.8 Watchlist and watched
 
 **Phase:** Phase 4.8  

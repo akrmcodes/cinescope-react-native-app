@@ -658,9 +658,9 @@ Work in this order. Each step is demoable.
 
 ### 4.9 Settings
 
-- [ ] **Dark mode** switch bound to `themeStore`. The whole app, including headers and tabs, switches immediately.
-- [ ] **Sign out** calls `signOut` and `router.replace('/login')` with the history cleared so Android back does not return to the shell.
-- [ ] Light theme uses the light tokens, not a washed-out dark theme.
+- [x] **Dark mode** switch bound to `themeStore`. The whole app, including headers and tabs, switches immediately.
+- [x] **Sign out** calls `signOut` and `router.replace('/login')` with the history cleared so Android back does not return to the shell.
+- [x] Light theme uses the light tokens, not a washed-out dark theme.
 
 ### 4.10 Navigation pass
 
