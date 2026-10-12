@@ -1,4 +1,4 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import asyncStorage from '@/core/storage/asyncStorage';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
@@ -36,7 +36,7 @@ export const useSessionStore = create<SessionState>()(
     }),
     {
       name: 'cinescope-session',
-      storage: createJSONStorage(() => AsyncStorage),
+      storage: createJSONStorage(() => asyncStorage),
       partialize: (state) => {
         if (state.status === 'signedIn' || state.status === 'signedOut') {
           return { status: state.status };

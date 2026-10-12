@@ -578,12 +578,12 @@ Image URL helper, used by UI later: `posterUrl(path)` and `backdropUrl(path)` re
 
 ### Phase 3 validation gate
 
-- [ ] Sign in, kill the app, reopen: status is `signedIn` after hydration
-- [ ] Toggle dark mode off, kill, reopen: still light
-- [ ] Add a fake `Movie` in a temporary dev call, kill, reopen: it is still in the watchlist. Remove the dev call before Phase 4.
-- [ ] Sign out does not empty the watchlist
-- [ ] `npx tsc --noEmit` exits 0
-- [ ] Project log updated
+- [x] Sign in, kill the app, reopen: status is `signedIn` after hydration
+- [x] Toggle dark mode off, kill, reopen: still light
+- [x] Add a fake `Movie` in a temporary dev call, kill, reopen: it is still in the watchlist. Remove the dev call before Phase 4.
+- [x] Sign out does not empty the watchlist
+- [x] `npx tsc --noEmit` exits 0
+- [x] Project log updated
 
 ---
 

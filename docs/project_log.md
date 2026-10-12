@@ -2,6 +2,25 @@
 
 Newest entries first.
 
+## 2026-10-13 — Phase 3 device state
+
+**Phase:** Phase 3  
+**Status:** Done
+
+### What changed
+
+- Four Zustand persist stores: session, theme, watchlist, watched (`cinescope-*` AsyncStorage keys).
+- Session `hasHydrated` + `hydrate()` via `onRehydrateStorage`; sign-out touches session only (§3.2).
+- Shared [`src/core/storage/asyncStorage.ts`](../src/core/storage/asyncStorage.ts) for RN + Node validation.
+- `ThemeProvider` reads `themeStore`.
+- Validation: `node --import ./scripts/phase3-test-setup.mjs --experimental-strip-types scripts/validate-phase3-gate.mjs` (session rehydrate, theme persist, watchlist fake movie id `999001`, sign-out isolation). No temporary dev UI added.
+
+### Experiment note
+
+- Time spent: (fill after review)
+- Comprehension: N/A for Phase 3 gate
+- Confusing part: resetting session to `unknown` in tests can persist an empty partial state and wipe `cinescope-session`; gate script rehydrates without that reset.
+
 ## 2026-10-13 — Phase 2 contracts and server state
 
 **Phase:** Phase 2  

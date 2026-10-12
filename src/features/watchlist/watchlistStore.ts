@@ -1,4 +1,4 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import asyncStorage from '@/core/storage/asyncStorage';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
@@ -29,7 +29,7 @@ export const useWatchlistStore = create<WatchlistState>()(
     }),
     {
       name: 'cinescope-watchlist',
-      storage: createJSONStorage(() => AsyncStorage),
+      storage: createJSONStorage(() => asyncStorage),
       partialize: (state) => ({ movies: state.movies }),
     },
   ),
