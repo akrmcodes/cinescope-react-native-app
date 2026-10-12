@@ -1,0 +1,37 @@
+---
+description: Expo Router routes stay thin; features own screens and data
+globs: "{app,src}/**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# Architecture
+
+```
+app route → feature screen → query hook or Zustand store → API client or storage
+```
+
+## Routes
+
+Files in `app/` re-export a screen or redirect. No `fetch`, Zod, or AsyncStorage there.
+
+- `router.replace` for splash, login, and sign-out
+- `router.push` for `/search` and `/movie/[id]`
+- Search and detail sit on the root stack, not as extra tabs
+
+## Features
+
+- `src/features/movies` — schemas, TMDB API, query hooks, movie screens
+- `src/features/session` — session store and login
+- `src/features/settings` — theme store and settings
+- `src/features/watchlist` and `watched` — persisted lists
+- `src/features/recommendation` — Staff Pick
+- `src/core` — env, theme, HTTP client, query client, shared UI
+
+Screens do not call `fetch` or read AsyncStorage directly.
+
+## Example
+
+```tsx
+// app/(app)/index.tsx
+export { HomeScreen as default } from '@/src/features/movies/HomeScreen';
+```

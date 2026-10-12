@@ -1,0 +1,32 @@
+---
+description: Strict TypeScript and Zod parsing at the network boundary
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# TypeScript
+
+Strict mode stays on. Parse untrusted JSON with Zod and infer the type from the schema.
+
+```ts
+export const movieSchema = z.object({
+  id: z.number(),
+  title: z.string(),
+  posterPath: z.string().default(''),
+});
+
+export type Movie = z.infer<typeof movieSchema>;
+```
+
+## Rules
+
+- `async`/`await` only. No floating promises.
+- List endpoints drop a bad item. Detail endpoints fail the query if the object is invalid.
+- Empty poster or backdrop paths become `""`, not a broken image URL.
+- Public functions get a one-line comment when the name is not enough. Do not narrate obvious lines.
+
+## Do not
+
+- Duplicate a Zod type as a hand-written interface
+- Catch an error and return an empty list for a detail request
+- Use `as Movie` on raw JSON

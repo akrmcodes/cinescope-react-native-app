@@ -1,0 +1,25 @@
+---
+description: Execute roadmap phases in order and finish the Android matrix
+alwaysApply: false
+---
+
+# Roadmap execution
+
+Read `docs/roadmap.md` before implementing a phase.
+
+| Phase | Focus |
+|---|---|
+| 1 | Expo scaffold, tokens, boot |
+| 2 | Zod, TMDB client, query hooks |
+| 3 | Zustand session, theme, lists |
+| 4 | Screen-for-screen UI parity |
+| 5 | Android API 24, 29, 33, 36, plus one physical phone |
+| 6 | Comprehension timing and written decision |
+
+## Rules
+
+1. Do not skip a validation gate.
+2. Phase 5 needs a killed-app run of cases D-01 through D-12 on each slot. A pass on one emulator does not cover the others.
+3. API 24 and API 36 failures block the decision phase.
+4. Phase 6 records the scores. It does not choose React Native or PWA for the team.
+5. Scaffold into a temp directory. This folder already holds `docs/` and `.cursor/`.

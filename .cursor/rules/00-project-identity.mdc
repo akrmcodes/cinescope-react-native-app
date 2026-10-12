@@ -1,0 +1,33 @@
+---
+description: CineScope React Native experiment identity, stack, and frozen product surface
+alwaysApply: true
+---
+
+# CineScope React Native
+
+This is a client-quality clone of the Flutter CineScope UI, built to test React Native. It is not a Flutter port.
+
+## Source of truth
+
+- Execution: `docs/roadmap.md`
+- History, once implementation starts: `docs/project_log.md`
+
+If a request conflicts with the roadmap, follow the roadmap and say so.
+
+## Frozen product
+
+Match the screens, copy, colors, and TMDB calls in the roadmap. No new screens, endpoints, or backend.
+
+## Stack
+
+Expo stable SDK, TypeScript, Expo Router, TanStack Query, Zustand, Zod, `fetch`, `expo-image`, AsyncStorage, StyleSheet.
+
+## Substitution
+
+No Firebase, Google Sign-In, or Firestore. Sign-in is a local session. Watchlist and watched lists persist on device.
+
+## Do not
+
+- Scaffold or overwrite `docs/`, `.cursor/`, or `AGENTS.md`
+- Install packages that are not on the roadmap allowlist
+- Copy Cubit, Bloc, or `useReducer` ViewModel patterns from the Flutter app

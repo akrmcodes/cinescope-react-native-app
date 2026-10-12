@@ -1,0 +1,27 @@
+---
+description: Append the project log after each completed roadmap phase
+alwaysApply: true
+---
+
+# Project log
+
+After each completed roadmap phase, append an entry to `docs/project_log.md` before ending the turn.
+
+Create the file in Phase 1 if it is missing. Header: running log, newest entries first.
+
+```markdown
+## YYYY-MM-DD — Short title
+
+**Phase:** Phase N
+**Status:** Done
+
+### What changed
+- Concrete outcomes
+
+### Experiment note
+- Time spent:
+- Comprehension (if this phase asks for it):
+- Confusing part:
+```
+
+Do not rewrite older entries. Skip the log only when the work was a question with no file changes.

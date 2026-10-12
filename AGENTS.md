@@ -1,41 +1,34 @@
-This is an Expo/React Native mobile application. Prioritize mobile-first patterns, performance, and cross-platform compatibility.
+# CineScope React Native — Agent Instructions
 
-## Expo has changed — do not trust your training data
+Client-quality movie app with the same UI as the Flutter CineScope build.
+Plan: `docs/roadmap.md`
 
-Expo ships breaking changes every SDK release. APIs you remember are likely renamed, moved, or removed. Before writing any code that touches an Expo, EAS, or React Native API:
+## Priorities
 
-1. Read the major version of the `expo` package in `package.json`.
-2. Fetch the matching versioned docs: `https://docs.expo.dev/versions/v<major>.0.0/`
-3. For anything else, fetch https://docs.expo.dev/llms.txt — an index of all Expo docs with corrections to common LLM misconceptions. Follow its links to the specific page you need; never answer from memory.
+1. Match the roadmap’s screens, copy, and TMDB calls
+2. Use the production stack below — do not port Flutter Cubits
+3. Log each finished phase in `docs/project_log.md`
 
-## Commands
+## Stack
 
-Use `bunx` instead of `npx` if the project uses bun (`bun.lock` present).
+Expo (stable SDK) · TypeScript · Expo Router · TanStack Query · Zustand · Zod · `fetch` · `expo-image` · AsyncStorage
 
-```bash
-npx expo install <package>  # ALWAYS use instead of npm/yarn/pnpm/bun add — resolves SDK-compatible versions
-npx expo start              # start the dev server
-npx expo lint               # lint
-npx tsc --noEmit            # typecheck
-npx expo-doctor             # diagnose dependency and config issues
-npx expo install --fix      # fix incompatible package versions
+## Structure
+
+```
+app/                 # thin routes only
+src/features/*       # screens, schemas, queries, stores
+src/core/            # theme, TMDB client, shared UI
 ```
 
-Run lint and typecheck before declaring any task done.
+Server data stays in TanStack Query. Session, theme, watchlist, and watched stay in Zustand. No Firebase.
 
-## Navigation & Routing
+## Hard rules
 
-- Use **Expo Router** for all navigation. Routes live in `src/app/` — every file there is a screen, `_layout.tsx` files define navigators. Keep non-route code (components, hooks, utils) outside `src/app/`.
-- Import `Link`, `router`, and `useLocalSearchParams` from `expo-router`.
-- Docs: https://docs.expo.dev/router/introduction.md
+- No packages beyond the roadmap allowlist
+- No new screens or endpoints
+- Sign-in is local. The button says **Sign in**
+- Staff Pick hides itself on failure
+- Android matrix (API 24, 29, 33, 36, plus one physical phone) is part of done
 
-## Building with EAS
-
-Use EAS to build, sign, and submit the app in the cloud (`eas build`, `eas submit`) and to ship over-the-air updates (`eas update`) — no local Xcode or Android Studio required. Run EAS CLI as `bunx eas-cli <command>` in Bun projects, or `npx eas-cli@latest <command>` otherwise; substitute that for bare `eas` in docs examples.
-Docs: https://docs.expo.dev/eas/index.md
-
-## Rules
-
-- If `ios/` and `android/` directories do not exist, they are generated (Continuous Native Generation). Never create or edit them by hand — configure native behavior in `app.json` and config plugins.
-- Expo Go only includes its bundled native modules. After adding a library with native code, the app needs a development build: `npx expo run:ios|android` locally, or `eas build --profile development`.
-- Prefer recommended Expo modules over third-party libraries, and check your available skills before adding dependencies. Docs: https://docs.expo.dev/versions/latest/index.md
+Cursor rules in `.cursor/rules/` expand these constraints.

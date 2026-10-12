@@ -1,0 +1,26 @@
+---
+description: Client-delivery quality bar for the React Native experiment
+alwaysApply: true
+---
+
+# Client quality
+
+Write code a client reviewer can follow. Clarity beats cleverness.
+
+## Do
+
+- One job per file. Names from the roadmap (`useTrendingMovies`, `signOut`, `MovieCard`).
+- Handle loading, empty, and error on every screen that fetches.
+- Hide Staff Pick when its query fails. Never take Home down with it.
+- Keep functions short enough to explain out loud.
+
+## Do not
+
+- Use `any`, `ts-ignore`, or non-null assertions to silence the compiler
+- Leave debug buttons, logs, or sample routes in a finished phase
+- Add a library to avoid a few lines of `StyleSheet`
+- Invent product behavior that the Flutter app does not have
+
+## When unsure
+
+Choose the option the roadmap already names. If it is silent, choose the smaller change and note it in `docs/project_log.md`.

@@ -1,0 +1,29 @@
+---
+description: TanStack Query owns server data; Zustand owns session, theme, and local lists
+globs: "src/**/{*Queries.ts,*Store.ts,*Api.ts}"
+alwaysApply: false
+---
+
+# Data and state
+
+## Server state (TanStack Query)
+
+TMDB lists, movie detail, and Staff Pick. Query keys:
+
+- `['movies', 'trending']`
+- `['movies', 'popular']`
+- `['movies', 'search', query]` — `enabled` only when query is non-empty
+- `['movies', 'detail', id]`
+- `['recommendation']` — `retry: 1`; the UI renders nothing on error
+
+Search debounce (500ms) lives in the search screen, not in the query client. Browse filters the popular query in memory and does not refetch.
+
+## Client state (Zustand persist)
+
+- `cinescope-session` — `unknown | signedIn | signedOut`
+- `cinescope-theme` — `isDarkMode`, default `true`
+- `cinescope-watchlist` and `cinescope-watched` — `Movie[]`, skip duplicate ids
+
+`signOut` changes the session only. It does not clear theme or movie lists.
+
+Do not copy TMDB results into a store.

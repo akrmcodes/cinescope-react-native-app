@@ -1,0 +1,32 @@
+---
+description: CineScope visual tokens, shared widgets, and StyleSheet-only UI
+globs: "{app,src}/**/*.tsx"
+alwaysApply: false
+---
+
+# UI
+
+Colors live in `src/core/theme/tokens.ts`. Screens use the active theme.
+
+| Token | Dark | Light |
+|---|---|---|
+| primary | `#F5A623` | `#F5A623` |
+| background | `#121212` | `#F5F5F5` |
+| surface | `#1E1E1E` | `#FFFFFF` |
+| text | `#F5F5F5` | `#121212` |
+| textMuted | `#9E9E9E` | `#616161` |
+
+## Shared UI
+
+Use `MovieCard`, `LoadingIndicator`, and `ErrorView` from `src/core/ui/`. Poster grids are two columns, aspect `0.65`. Trending row height is 220, card width 130. Detail backdrop height is 300.
+
+## Copy
+
+Keep roadmap strings exact, including **Sign in** (not Google) and the empty-state sentences.
+
+## Do not
+
+- Put hex values in screens
+- Add NativeWind, a UI kit, or extra icon packages
+- Build screens that are not in the roadmap
+- Use swipe-to-delete
