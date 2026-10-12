@@ -664,12 +664,12 @@ Work in this order. Each step is demoable.
 
 ### 4.10 Navigation pass
 
-- [ ] Cold start, signed out → Splash → Login
-- [ ] Cold start, signed in → Splash → Home
-- [ ] Login → Home
-- [ ] Home → Search → Detail → back → back
-- [ ] Browse, Watchlist, and Watched → Detail → back lands on the same tab
-- [ ] Settings → Sign out → Login, and the Android back button does not reopen the shell
+- [x] Cold start, signed out → Splash → Login
+- [x] Cold start, signed in → Splash → Home
+- [x] Login → Home
+- [x] Home → Search → Detail → back → back
+- [x] Browse, Watchlist, and Watched → Detail → back lands on the same tab
+- [x] Settings → Sign out → Login, and the Android back button does not reopen the shell
 
 ### Phase 4 validation gate
 

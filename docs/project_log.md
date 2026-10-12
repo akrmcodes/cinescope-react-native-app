@@ -2,6 +2,24 @@
 
 Newest entries first.
 
+## 2026-10-13 — Phase 4.10 Navigation pass
+
+**Phase:** Phase 4.10  
+**Status:** Done
+
+### What changed
+
+- [`src/features/session/authNavigation.ts`](../src/features/session/authNavigation.ts) — `signOutAndNavigateToLogin` (dismissAll + replace login).
+- [`src/features/session/useAuthNavigationGuards.ts`](../src/features/session/useAuthNavigationGuards.ts) — `useProtectedAppShell` on tab layout; `useLoginNavigationGuards` (signed-in redirect + Android back block when signed out).
+- Wired guards in [`app/(app)/_layout.tsx`](../app/(app)/_layout.tsx) and [`LoginScreen.tsx`](../src/features/session/LoginScreen.tsx); Settings uses shared sign-out helper.
+
+### Experiment note
+
+- Time spent: (fill after review)
+- Comprehension: (fill after review)
+- Confusing part:
+- Manual pass on device: confirm §4.10 flows and D-11 Android back after sign-out on your Expo Go build.
+
 ## 2026-10-13 — Phase 4.9 Settings
 
 **Phase:** Phase 4.9  

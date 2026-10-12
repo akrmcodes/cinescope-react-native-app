@@ -3,6 +3,7 @@ import { type Href, router, Tabs } from 'expo-router';
 import { Pressable, type ColorValue } from 'react-native';
 
 import { useTheme, useThemedHeaderOptions } from '@/core/theme/ThemeProvider';
+import { useProtectedAppShell } from '@/features/session/useAuthNavigationGuards';
 
 type TabIconName = keyof typeof MaterialIcons.glyphMap;
 
@@ -29,6 +30,7 @@ function HomeSearchButton() {
 }
 
 export default function AppTabLayout() {
+  useProtectedAppShell();
   const { tokens } = useTheme();
   const headerOptions = useThemedHeaderOptions();
 

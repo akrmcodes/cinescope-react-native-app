@@ -1,9 +1,9 @@
-import { type Href, router } from 'expo-router';
 import { useCallback } from 'react';
 import { Pressable, StyleSheet, Switch, Text, View } from 'react-native';
 
 import { useTheme } from '@/core/theme/ThemeProvider';
 import { SECTION_HORIZONTAL_PADDING } from '@/features/movies/homeLayout';
+import { signOutAndNavigateToLogin } from '@/features/session/authNavigation';
 import { useSessionStore } from '@/features/session/sessionStore';
 import { useThemeStore } from '@/features/settings/themeStore';
 
@@ -14,11 +14,7 @@ export function SettingsScreen() {
   const signOut = useSessionStore((state) => state.signOut);
 
   const handleSignOut = useCallback(() => {
-    signOut();
-    if (router.canDismiss()) {
-      router.dismissAll();
-    }
-    router.replace('/login' as Href);
+    signOutAndNavigateToLogin(signOut);
   }, [signOut]);
 
   return (

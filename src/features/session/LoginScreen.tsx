@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import { useTheme } from '@/core/theme/ThemeProvider';
+import { useLoginNavigationGuards } from '@/features/session/useAuthNavigationGuards';
 import { useSessionStore } from '@/features/session/sessionStore';
 
 function waitForSignInUi(): Promise<void> {
@@ -21,6 +22,7 @@ function waitForSignInUi(): Promise<void> {
 
 export function LoginScreen() {
   const { tokens } = useTheme();
+  useLoginNavigationGuards();
   const signIn = useSessionStore((state) => state.signIn);
   const [isSigningIn, setIsSigningIn] = useState(false);
 
