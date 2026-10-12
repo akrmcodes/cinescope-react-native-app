@@ -649,12 +649,12 @@ Work in this order. Each step is demoable.
 
 ### 4.8 Watchlist and watched
 
-- [ ] Rows match section 2.2. Card surface, poster 50×75, title one line, subtitle year.
-- [ ] Watchlist menu: View Details, Remove from Watchlist, Mark as Watched.
-- [ ] Watched menu: Remove from Watched.
-- [ ] Row press opens detail.
-- [ ] Empty sentences from section 2.1.
-- [ ] No swipe-to-delete.
+- [x] Rows match section 2.2. Card surface, poster 50×75, title one line, subtitle year.
+- [x] Watchlist menu: View Details, Remove from Watchlist, Mark as Watched.
+- [x] Watched menu: Remove from Watched.
+- [x] Row press opens detail.
+- [x] Empty sentences from section 2.1.
+- [x] No swipe-to-delete.
 
 ### 4.9 Settings
 

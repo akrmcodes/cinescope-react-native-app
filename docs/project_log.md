@@ -2,6 +2,24 @@
 
 Newest entries first.
 
+## 2026-10-13 — Phase 4.8 Watchlist and watched
+
+**Phase:** Phase 4.8  
+**Status:** Done
+
+### What changed
+
+- [`src/features/movies/listRowLayout.ts`](../src/features/movies/listRowLayout.ts) — §2.2 list row poster dimensions.
+- [`src/core/ui/MovieListRow.tsx`](../src/core/ui/MovieListRow.tsx) and [`RowOverflowMenu.tsx`](../src/core/ui/RowOverflowMenu.tsx) — shared row and modal overflow menu.
+- [`WatchlistScreen.tsx`](../src/features/watchlist/WatchlistScreen.tsx) — store-driven list, three menu actions, snackbars.
+- [`WatchedScreen.tsx`](../src/features/watched/WatchedScreen.tsx) — same row pattern, remove-only menu.
+
+### Experiment note
+
+- Time spent: (fill after review)
+- Comprehension: (fill after review)
+- Confusing part:
+
 ## 2026-10-13 — Phase 4.7 Detail
 
 **Phase:** Phase 4.7  
