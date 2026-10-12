@@ -2,6 +2,25 @@
 
 Newest entries first.
 
+## 2026-10-13 — Phase 4.7 Detail
+
+**Phase:** Phase 4.7  
+**Status:** Done
+
+### What changed
+
+- [`src/features/movies/movieFormat.ts`](../src/features/movies/movieFormat.ts) — year, rating format, `movieFromDetail`.
+- [`src/features/movies/detailLayout.ts`](../src/features/movies/detailLayout.ts) — backdrop height 300.
+- [`src/core/ui/SnackbarBanner.tsx`](../src/core/ui/SnackbarBanner.tsx) — 2s bottom banner for store toggle copy.
+- [`src/features/movies/DetailScreen.tsx`](../src/features/movies/DetailScreen.tsx) — parse route id, backdrop scroll, synopsis body, header watchlist/watched icons.
+- [`parseMovieRouteId`](../src/features/movies/movieQueries.ts) exported for route parsing.
+
+### Experiment note
+
+- Time spent: (fill after review)
+- Comprehension: (fill after review)
+- Confusing part:
+
 ## 2026-10-13 — Phase 4.6 Search
 
 **Phase:** Phase 4.6  

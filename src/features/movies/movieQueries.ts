@@ -18,6 +18,11 @@ export const movieQueryKeys = {
 
 const movieIdSchema = z.coerce.number().finite();
 
+export function parseMovieRouteId(param: string | string[] | undefined) {
+  const raw = Array.isArray(param) ? param[0] : param;
+  return movieIdSchema.safeParse(raw);
+}
+
 export function useTrendingMovies() {
   return useQuery({
     queryKey: movieQueryKeys.trending(),

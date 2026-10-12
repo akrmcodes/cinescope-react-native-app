@@ -640,12 +640,12 @@ Work in this order. Each step is demoable.
 
 ### 4.7 Detail
 
-- [ ] Route `movie/[id]` parses the id.
-- [ ] Backdrop height 300, pinned header, cover image, surface fallback.
-- [ ] Header actions: check icon (watched), bookmark icon (watchlist). Filled when active, outline when not.
-- [ ] Meta line, genre chips, **Synopsis**, overview.
-- [ ] Toggles call the stores and show the snackbar strings from section 2.1. Use a small in-app banner or React Native’s compatible snackbar pattern that does not add a dependency. A 2-second absolute banner at the bottom is acceptable if it shows the same sentence.
-- [ ] Loading and error states fill the screen. Error has a back header and Retry.
+- [x] Route `movie/[id]` parses the id.
+- [x] Backdrop height 300, pinned header, cover image, surface fallback.
+- [x] Header actions: check icon (watched), bookmark icon (watchlist). Filled when active, outline when not.
+- [x] Meta line, genre chips, **Synopsis**, overview.
+- [x] Toggles call the stores and show the snackbar strings from section 2.1. Use a small in-app banner or React Native’s compatible snackbar pattern that does not add a dependency. A 2-second absolute banner at the bottom is acceptable if it shows the same sentence.
+- [x] Loading and error states fill the screen. Error has a back header and Retry.
 
 ### 4.8 Watchlist and watched
 
