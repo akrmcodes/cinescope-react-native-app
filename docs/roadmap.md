@@ -625,11 +625,11 @@ Work in this order. Each step is demoable.
 
 ### 4.5 Browse
 
-- [ ] Horizontal chips. Selected chip uses the primary color.
-- [ ] Sort control with **Popular** and **Top Rated**.
-- [ ] Data is the popular query, passed through `filterBrowseMovies`.
-- [ ] Empty genre uses the sentence in section 2.1.
-- [ ] Chip and sort changes do not refetch.
+- [x] Horizontal chips. Selected chip uses the primary color.
+- [x] Sort control with **Popular** and **Top Rated**.
+- [x] Data is the popular query, passed through `filterBrowseMovies`.
+- [x] Empty genre uses the sentence in section 2.1.
+- [x] Chip and sort changes do not refetch.
 
 ### 4.6 Search
 

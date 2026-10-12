@@ -2,6 +2,22 @@
 
 Newest entries first.
 
+## 2026-10-13 — Phase 4.5 Browse
+
+**Phase:** Phase 4.5  
+**Status:** Done
+
+### What changed
+
+- [`src/features/movies/filterBrowseMovies.ts`](../src/features/movies/filterBrowseMovies.ts) — genre chips constants, `filterBrowseMovies`, empty copy helper.
+- [`src/features/movies/BrowseScreen.tsx`](../src/features/movies/BrowseScreen.tsx) — horizontal chips, **Sort by** row, `usePopularMovies` + in-memory filter/sort, two-column grid, loading/error/empty states.
+
+### Experiment note
+
+- Time spent: (fill after review)
+- Comprehension: (fill after review)
+- Confusing part:
+
 ## 2026-10-13 — Phase 4.4 Home
 
 **Phase:** Phase 4.4  
