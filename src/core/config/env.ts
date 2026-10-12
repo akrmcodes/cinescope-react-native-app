@@ -1,5 +1,5 @@
-/** Replace with the TMDB v3 key from the Flutter `api_constants.dart` before Phase 2 network calls. */
-export const tmdbApiKey = '';
+/** Set via `.env` as EXPO_PUBLIC_TMDB_API_KEY (see `.env.example`). Not committed to git. */
+export const tmdbApiKey = process.env.EXPO_PUBLIC_TMDB_API_KEY ?? '';
 
 export const tmdbBaseUrl = 'https://api.themoviedb.org/3';
 

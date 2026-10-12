@@ -523,37 +523,37 @@ Do not install Firebase, Axios, NativeWind, Redux, React Navigation as a direct 
 
 ### 2.2 TMDB client
 
-- [ ] `tmdbClient.ts` exposes one function, `tmdbGet(path, query)`.
-- [ ] It builds the URL from `tmdbBaseUrl`, always sets `api_key`, and `fetch`es.
-- [ ] Non-2xx responses throw an `Error` whose message includes the status code.
-- [ ] It returns unknown JSON. Callers parse with Zod. The client does not know about movies.
+- [x] `tmdbClient.ts` exposes one function, `tmdbGet(path, query)`.
+- [x] It builds the URL from `tmdbBaseUrl`, always sets `api_key`, and `fetch`es.
+- [x] Non-2xx responses throw an `Error` whose message includes the status code.
+- [x] It returns unknown JSON. Callers parse with Zod. The client does not know about movies.
 
 ### 2.3 API functions
 
-- [ ] `getTrendingMovies(): Promise<Movie[]>`
-- [ ] `getPopularMovies(page = 1): Promise<Movie[]>`
-- [ ] `searchMovies(query: string): Promise<Movie[]>`
-- [ ] `getMovieDetail(id: number): Promise<MovieDetail>`
-- [ ] `getRecommendation(): Promise<Recommendation>`
+- [x] `getTrendingMovies(): Promise<Movie[]>`
+- [x] `getPopularMovies(page = 1): Promise<Movie[]>`
+- [x] `searchMovies(query: string): Promise<Movie[]>`
+- [x] `getMovieDetail(id: number): Promise<MovieDetail>`
+- [x] `getRecommendation(): Promise<Recommendation>`
 
 Image URL helper, used by UI later: `posterUrl(path)` and `backdropUrl(path)` return `""` when `path` is empty, so `expo-image` is not given a broken URL.
 
 ### 2.4 Query hooks
 
-- [ ] Implement the hooks and keys in section 7.1.
-- [ ] `useMovieSearch` accepts the already-debounced string.
-- [ ] Recommendation query uses `retry: 1` and does not throw into an error boundary. The screen reads `isError` and returns null.
+- [x] Implement the hooks and keys in section 7.1.
+- [x] `useMovieSearch` accepts the already-debounced string.
+- [x] Recommendation query uses `retry: 1` and does not throw into an error boundary. The screen reads `isError` and returns null.
 
 ### Phase 2 validation gate
 
-- [ ] A one-off call (temporary button or a unit-free manual fetch from a dev screen that you then delete) returns trending movies with posters paths
-- [ ] Search with `q=inception` returns a non-empty list
-- [ ] Detail for id `27205` returns runtime, genres, and a backdrop path
-- [ ] An unknown id surfaces an error state, not an uncaught exception
-- [ ] Recommendation either returns Inception’s payload or an error the UI can ignore
-- [ ] `npx tsc --noEmit` exits 0
-- [ ] No screen file calls `fetch`
-- [ ] Project log updated, with comprehension time: how long to explain `movieQueries.ts` using only a Next.js background
+- [x] A one-off call (temporary button or a unit-free manual fetch from a dev screen that you then delete) returns trending movies with posters paths
+- [x] Search with `q=inception` returns a non-empty list
+- [x] Detail for id `27205` returns runtime, genres, and a backdrop path
+- [x] An unknown id surfaces an error state, not an uncaught exception
+- [x] Recommendation either returns Inception’s payload or an error the UI can ignore
+- [x] `npx tsc --noEmit` exits 0
+- [x] No screen file calls `fetch`
+- [x] Project log updated, with comprehension time: how long to explain `movieQueries.ts` using only a Next.js background
 
 ---
 
