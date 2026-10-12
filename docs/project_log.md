@@ -2,6 +2,22 @@
 
 Newest entries first.
 
+## 2026-10-13 — Phase 4.6 Search
+
+**Phase:** Phase 4.6  
+**Status:** Done
+
+### What changed
+
+- [`src/features/movies/useDebouncedSearchText.ts`](../src/features/movies/useDebouncedSearchText.ts) — 500ms debounce, immediate clear when input is empty.
+- [`src/features/movies/SearchScreen.tsx`](../src/features/movies/SearchScreen.tsx) — autofocus field, idle/loading/grid/empty/error states, `useMovieSearch`, two-column grid, keyboard avoiding.
+
+### Experiment note
+
+- Time spent: (fill after review)
+- Comprehension: (fill after review)
+- Confusing part:
+
 ## 2026-10-13 — Phase 4.5 Browse
 
 **Phase:** Phase 4.5  

@@ -633,10 +633,10 @@ Work in this order. Each step is demoable.
 
 ### 4.6 Search
 
-- [ ] Header **Search**, autofocus, hint **Search for movies...**.
-- [ ] Debounce 500ms. Clearing the field returns to **Search for your favorite movies** and cancels the pending timer.
-- [ ] Non-empty query: loading, then a two-column grid, or **No movies found**, or `ErrorView`.
-- [ ] Retry repeats the current text.
+- [x] Header **Search**, autofocus, hint **Search for movies...**.
+- [x] Debounce 500ms. Clearing the field returns to **Search for your favorite movies** and cancels the pending timer.
+- [x] Non-empty query: loading, then a two-column grid, or **No movies found**, or `ErrorView`.
+- [x] Retry repeats the current text.
 
 ### 4.7 Detail
 
