@@ -565,11 +565,11 @@ Image URL helper, used by UI later: `posterUrl(path)` and `backdropUrl(path)` re
 
 ### 3.1 Stores
 
-- [ ] Implement the four stores in section 7.2 with `persist` and the AsyncStorage storage adapter.
-- [ ] `partialize` so only the data fields are stored, not function identities.
-- [ ] `onRehydrateStorage` (or the persist `hasHydrated` API) exposes a boolean the splash can await. Session status stays `unknown` until hydration finishes, then becomes `signedIn` or `signedOut`.
-- [ ] Watchlist and watched `addMovie` / `removeMovie` are synchronous updates to the array. Persist writes through the middleware. Duplicate ids are ignored.
-- [ ] `isInWatchlist` and `isWatched` are plain selectors.
+- [x] Implement the four stores in section 7.2 with `persist` and the AsyncStorage storage adapter.
+- [x] `partialize` so only the data fields are stored, not function identities.
+- [x] `onRehydrateStorage` (or the persist `hasHydrated` API) exposes a boolean the splash can await. Session status stays `unknown` until hydration finishes, then becomes `signedIn` or `signedOut`.
+- [x] Watchlist and watched `addMovie` / `removeMovie` are synchronous updates to the array. Persist writes through the middleware. Duplicate ids are ignored.
+- [x] `isInWatchlist` and `isWatched` are plain selectors.
 
 ### 3.2 Sign-out rule
 

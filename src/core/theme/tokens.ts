@@ -21,3 +21,7 @@ export const lightTokens: ThemeTokens = {
   text: '#121212',
   textMuted: '#616161',
 };
+
+export function tokensForDarkMode(isDarkMode: boolean): ThemeTokens {
+  return isDarkMode ? darkTokens : lightTokens;
+}

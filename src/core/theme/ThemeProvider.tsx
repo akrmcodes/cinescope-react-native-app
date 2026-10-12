@@ -1,6 +1,8 @@
 import { createContext, useContext, useMemo, type ReactNode } from 'react';
 
-import { darkTokens, lightTokens, type ThemeTokens } from '@/core/theme/tokens';
+import { useThemeStore } from '@/features/settings/themeStore';
+
+import { type ThemeTokens, tokensForDarkMode } from '@/core/theme/tokens';
 
 type ThemeContextValue = {
   tokens: ThemeTokens;
@@ -9,14 +11,15 @@ type ThemeContextValue = {
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
-/** Phase 1: fixed dark theme. Phase 3 wires `themeStore`. */
 export function ThemeProvider({ children }: { children: ReactNode }) {
+  const isDarkMode = useThemeStore((state) => state.isDarkMode);
+
   const value = useMemo(
     () => ({
-      tokens: darkTokens,
-      isDarkMode: true,
+      tokens: tokensForDarkMode(isDarkMode),
+      isDarkMode,
     }),
-    [],
+    [isDarkMode],
   );
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
@@ -28,8 +31,4 @@ export function useTheme(): ThemeContextValue {
     throw new Error('useTheme must be used within ThemeProvider');
   }
   return context;
-}
-
-export function tokensForDarkMode(isDarkMode: boolean): ThemeTokens {
-  return isDarkMode ? darkTokens : lightTokens;
 }
