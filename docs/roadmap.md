@@ -610,18 +610,18 @@ Work in this order. Each step is demoable.
 
 ### 4.3 Tab shell
 
-- [ ] Five tabs, labels and header titles from section 2.1.
-- [ ] Icons: home, explore/compass, bookmark, check-circle, settings. Use `@expo/vector-icons` (already in the Expo template). Do not add an icon package.
-- [ ] Search icon on the Home header only. It pushes `/search`.
+- [x] Five tabs, labels and header titles from section 2.1.
+- [x] Icons: home, explore/compass, bookmark, check-circle, settings. Use `@expo/vector-icons` (already in the Expo template). Do not add an icon package.
+- [x] Search icon on the Home header only. It pushes `/search`.
 
 ### 4.4 Home
 
-- [ ] On focus, the three queries run.
-- [ ] Staff Pick is a horizontal card: 60×90 poster, label **Staff Pick** in primary, title, reason max two lines. Hidden unless the recommendation query is successful.
-- [ ] Trending: horizontal `FlatList`, height 220, card width 130.
-- [ ] Popular: two columns, aspect 0.65, gap 8.
-- [ ] Section titles 18px, bold.
-- [ ] If trending or popular fails, `ErrorView` with Retry. Staff Pick failure does not replace the page.
+- [x] On focus, the three queries run.
+- [x] Staff Pick is a horizontal card: 60×90 poster, label **Staff Pick** in primary, title, reason max two lines. Hidden unless the recommendation query is successful.
+- [x] Trending: horizontal `FlatList`, height 220, card width 130.
+- [x] Popular: two columns, aspect 0.65, gap 8.
+- [x] Section titles 18px, bold.
+- [x] If trending or popular fails, `ErrorView` with Retry. Staff Pick failure does not replace the page.
 
 ### 4.5 Browse
 

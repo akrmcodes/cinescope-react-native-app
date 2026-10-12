@@ -2,6 +2,25 @@
 
 Newest entries first.
 
+## 2026-10-13 — Phase 4.4 Home
+
+**Phase:** Phase 4.4  
+**Status:** Done
+
+### What changed
+
+- [`src/features/movies/homeLayout.ts`](../src/features/movies/homeLayout.ts) — §2.2 layout constants and `popularCardWidth`.
+- [`src/features/recommendation/StaffPick.tsx`](../src/features/recommendation/StaffPick.tsx) — presentational Staff Pick card; tap navigates to movie detail.
+- [`src/features/movies/HomeScreen.tsx`](../src/features/movies/HomeScreen.tsx) — focus refetch for three queries; Staff Pick / trending / popular sections with per-section loading and `ErrorView`.
+- [`app/movie/[id].tsx`](../app/movie/[id].tsx) + root stack screen — detail placeholder until §4.7.
+- [`ErrorView`](../src/core/ui/ErrorView.tsx) — optional `fill={false}` for inline section errors.
+
+### Experiment note
+
+- Time spent: (fill after review)
+- Comprehension: (fill after review)
+- Confusing part:
+
 ## 2026-10-13 — Phase 3 device state
 
 **Phase:** Phase 3  

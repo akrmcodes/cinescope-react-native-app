@@ -5,16 +5,24 @@ import { useTheme } from '@/core/theme/ThemeProvider';
 type ErrorViewProps = {
   message?: string;
   onRetry: () => void;
+  /** When false, sizes for an inline section instead of filling the screen. */
+  fill?: boolean;
 };
 
 export function ErrorView({
   message = 'Something went wrong. Please try again.',
   onRetry,
+  fill = true,
 }: ErrorViewProps) {
   const { tokens } = useTheme();
 
   return (
-    <View style={[styles.container, { backgroundColor: tokens.background }]}>
+    <View
+      style={[
+        fill ? styles.containerFill : styles.containerInline,
+        { backgroundColor: tokens.background },
+      ]}
+    >
       <Text style={[styles.message, { color: tokens.textMuted }]}>{message}</Text>
       <Pressable
         accessibilityRole="button"
@@ -31,12 +39,20 @@ export function ErrorView({
 }
 
 const styles = StyleSheet.create({
-  container: {
+  containerFill: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 24,
     gap: 16,
+  },
+  containerInline: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 16,
+    paddingVertical: 24,
+    gap: 12,
+    minHeight: 140,
   },
   message: {
     fontSize: 15,
