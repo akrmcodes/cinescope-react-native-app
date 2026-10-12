@@ -603,10 +603,10 @@ Work in this order. Each step is demoable.
 
 ### 4.2 Splash and login
 
-- [ ] Splash shows **CineScope** and, after 2 seconds and hydration, `router.replace` to `/login` or `/(app)`.
-- [ ] Login card matches the copy in section 2.1. Pressing **Sign in** sets the session and replaces to `/(app)`.
-- [ ] The button shows the activity indicator while the status flips. This is local, so the spinner may be brief. Still handle it so the pattern is visible.
-- [ ] There is no Google logo and no Google wording.
+- [x] Splash shows **CineScope** and, after 2 seconds and hydration, `router.replace` to `/login` or `/(app)`.
+- [x] Login card matches the copy in section 2.1. Pressing **Sign in** sets the session and replaces to `/(app)`.
+- [x] The button shows the activity indicator while the status flips. This is local, so the spinner may be brief. Still handle it so the pattern is visible.
+- [x] There is no Google logo and no Google wording.
 
 ### 4.3 Tab shell
 
