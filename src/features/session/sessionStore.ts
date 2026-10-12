@@ -25,7 +25,13 @@ export const useSessionStore = create<SessionState>()(
           status: persistedStatus === 'signedIn' ? 'signedIn' : 'signedOut',
         });
       },
+      /** Flips session to signed-in only. Does not touch theme, watchlist, or watched storage. */
       signIn: () => set({ status: 'signedIn' }),
+      /**
+       * Roadmap §3.2: session status only. Must not call `removeItem` on `cinescope-theme`,
+       * `cinescope-watchlist`, or `cinescope-watched`. Theme and lists survive sign-out and the
+       * next sign-in.
+       */
       signOut: () => set({ status: 'signedOut' }),
     }),
     {

@@ -573,8 +573,8 @@ Image URL helper, used by UI later: `posterUrl(path)` and `backdropUrl(path)` re
 
 ### 3.2 Sign-out rule
 
-- [ ] `signOut` changes session status only.
-- [ ] After sign-out, theme is still whatever the user chose, and both movie lists are still present on the next sign-in.
+- [x] `signOut` changes session status only.
+- [x] After sign-out, theme is still whatever the user chose, and both movie lists are still present on the next sign-in.
 
 ### Phase 3 validation gate
 
