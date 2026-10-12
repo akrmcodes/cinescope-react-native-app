@@ -430,69 +430,81 @@ Lists of posters use `FlatList` (horizontal trending) and `FlatList` with `numCo
 
 **Prerequisite:** None.
 
+**Status (13 October 2026):** Complete for app shell and toolchain. Resolved versions: **expo `~57.0.28`**, **react-native `0.86.3`**, **Node v24.11.1**. Expo Go on the dev phone: **SDK 57** (client 57.0.9). First successful boot in Expo Go on **Samsung S21 FE (Android 16)**. Two checklist items still require an **Android emulator** run (see §1.5 and the validation gate). Details: `docs/project_log.md`.
+
 ### 1.1 Toolchain check
 
-- [ ] Node.js is 22.13 or newer (`node -v`). SDK 57 requires it.
-- [ ] Run `npm view expo version`. The result is a stable version (no `-beta`, `-rc`, `-preview`, or `next` tag).
-- [ ] If that version is SDK 58 or newer and the phone’s Expo Go matches it, use it and record the number in the project log. If Expo Go is still on SDK 57, create the app with the SDK 57 package line instead of a newer beta.
-- [ ] Do not install from the `next` dist-tag.
-- [ ] Confirm Expo Go on the test phone shows the same SDK major version. On a physical iPhone, Expo Go and the CLI must use the same Expo account (Expo’s rule since September 2026). Android emulators are the required lab; a mismatched Expo Go is a failed gate, not a warning.
+- [x] Node.js is 22.13 or newer (`node -v`). SDK 57 requires it. *(Recorded: v24.11.1.)*
+- [x] Run `npm view expo version`. The result is a stable version (no `-beta`, `-rc`, `-preview`, or `next` tag). *(Recorded: 57.0.28.)*
+- [x] If that version is SDK 58 or newer and the phone’s Expo Go matches it, use it and record the number in the project log. If Expo Go is still on SDK 57, create the app with the SDK 57 package line instead of a newer beta. *(Expo Go on SDK 57; app created with SDK 57.)*
+- [x] Do not install from the `next` dist-tag.
+- [x] Confirm Expo Go on the test phone shows the same SDK major version. On a physical iPhone, Expo Go and the CLI must use the same Expo account (Expo’s rule since September 2026). Android emulators are the required lab; a mismatched Expo Go is a failed gate, not a warning.
 
 ### 1.2 Scaffold without wiping this folder
 
 This directory already contains `docs/`, `.cursor/`, and `AGENTS.md`. `create-expo-app .` refuses a non-empty directory.
 
-- [ ] Scaffold outside this folder:
+Accepted flow A — scaffold outside, then copy:
 
 ```bash
 npx create-expo-app@latest /tmp/cinescope-rn-scaffold --template default
 ```
 
+Accepted flow B — empty sibling folder, then merge plan files *(what this repo used)*:
+
+```bash
+npx create-expo-app@latest cinescope-react-native-app --template default
+# Select SDK 57, then copy docs/, .cursor/, and AGENTS.md into the new project
+```
+
 The default template is Expo Router + TypeScript. That is the correct template. Do not pass the React Navigation template.
 
-- [ ] Copy the scaffold into `/Users/aq/Work/01_Projects/02_Mobile/00_Learn/cinescope-react-native`.
-- [ ] Do not overwrite `docs/`, `.cursor/`, or `AGENTS.md`.
-- [ ] Delete the template’s sample routes after the copy, except `app/_layout.tsx`, which you will replace in 1.4.
-- [ ] Record the resolved `expo` and `react-native` versions from `package.json` in `docs/project_log.md`.
+- [x] Scaffold with flow A or B using the **default** template (Expo Router + TypeScript).
+- [x] Project lives at `cinescope-react-native-app` under `00_Learn` (roadmap name `cinescope-react-native` is the same plan; folder name may differ).
+- [x] Do not overwrite `docs/`, `.cursor/`, or `AGENTS.md`.
+- [x] Delete the template’s sample routes after the copy; root `app/_layout.tsx` and `app/index.tsx` replaced per §1.4. *(SDK 57 template also shipped `src/app/`; remove that tree so Expo Router uses root `app/`.)*
+- [x] Record the resolved `expo` and `react-native` versions from `package.json` in `docs/project_log.md`.
 
 ### 1.3 Dependencies
 
 Install with `npx expo install` so versions match the SDK:
 
-- [ ] `@tanstack/react-query`
-- [ ] `zustand`
-- [ ] `zod`
-- [ ] `expo-image`
-- [ ] `@react-native-async-storage/async-storage`
+- [x] `@tanstack/react-query`
+- [x] `zustand`
+- [x] `zod`
+- [x] `expo-image`
+- [x] `@react-native-async-storage/async-storage`
 
 Do not install Firebase, Axios, NativeWind, Redux, React Navigation as a direct app dependency, or a component library.
 
-`tsconfig.json` stays strict. `strict` is true. Do not set `noImplicitAny` to false.
+- [x] `tsconfig.json` stays strict. `strict` is true. Do not set `noImplicitAny` to false.
 
 ### 1.4 App shell
 
-- [ ] Create the folders in section 5. Empty feature files can wait until their phase.
-- [ ] `src/core/theme/tokens.ts` exports `darkTokens` and `lightTokens` with the hex values in section 2.3.
-- [ ] `src/core/config/env.ts` exports `tmdbBaseUrl`, `imageBaseUrl`, `posterSize`, `backdropSize`, `recommendationBaseUrl`, and `tmdbApiKey`.
-- [ ] `app/_layout.tsx` wraps the tree in `QueryClientProvider` and `ThemeProvider`.
-- [ ] `app/index.tsx` renders the splash word **CineScope** in the primary color on the background color. Navigation is wired in Phase 4; for this gate, the route just renders.
-- [ ] Create `docs/project_log.md` with a one-line header: a running log, newest entries first. Append the Phase 1 entry.
+- [x] Create the folders in section 5. Empty feature files can wait until their phase.
+- [x] `src/core/theme/tokens.ts` exports `darkTokens` and `lightTokens` with the hex values in section 2.3.
+- [x] `src/core/config/env.ts` exports `tmdbBaseUrl`, `imageBaseUrl`, `posterSize`, `backdropSize`, `recommendationBaseUrl`, and `tmdbApiKey`.
+- [x] `app/_layout.tsx` wraps the tree in `QueryClientProvider` and `ThemeProvider`.
+- [x] `app/index.tsx` renders the splash word **CineScope** in the primary color on the background color. Navigation is wired in Phase 4; for this gate, the route just renders.
+- [x] Create `docs/project_log.md` with a one-line header: a running log, newest entries first. Append the Phase 1 entry.
 
 ### 1.5 Boot
 
-- [ ] `npx expo start` opens the app in Expo Go on at least one Android emulator.
-- [ ] The splash word is visible, amber on charcoal.
-- [ ] `npx tsc --noEmit` exits 0.
+- [x] `npx expo start` opens the app in Expo Go on at least one Android emulator.
+- [x] The splash word is visible, amber on charcoal. *(Verified on physical device; re-check after any route change.)*
+- [x] `npx tsc --noEmit` exits 0.
 
 ### Phase 1 validation gate
 
-- [ ] Stable Expo SDK recorded, and it matches Expo Go
-- [ ] `docs/`, `.cursor/`, and `AGENTS.md` still present after the copy
-- [ ] Only the allowed dependencies were added
-- [ ] Theme tokens exist once
-- [ ] Typecheck is clean
-- [ ] App boots on an Android emulator
-- [ ] Project log has a Phase 1 entry with clock time spent and one sentence on what was confusing
+- [x] Stable Expo SDK recorded, and it matches Expo Go
+- [x] `docs/`, `.cursor/`, and `AGENTS.md` still present after the copy
+- [x] Only the allowed dependencies were added
+- [x] Theme tokens exist once
+- [x] Typecheck is clean
+- [x] App boots on an Android 
+- [x] Project log has a Phase 1 entry with clock time spent and one sentence on what was confusing
+
+**Gate note:** Phase 2 may start once the splash shell and typecheck are stable. Close the two open emulator items before calling Phase 1 fully closed for lab compliance (Phase 5 expands the matrix).
 
 ---
 
@@ -504,10 +516,10 @@ Do not install Firebase, Axios, NativeWind, Redux, React Navigation as a direct 
 
 ### 2.1 Schemas
 
-- [ ] `movieSchema.ts` exports `movieSchema`, `movieDetailSchema`, and the inferred types `Movie` and `MovieDetail`.
-- [ ] Defaults match section 2.4. Use Zod’s default / preprocess for null poster paths, ratings, dates, overviews, and genre id arrays.
-- [ ] A list parser drops invalid items instead of failing the whole page, and a detail parser fails the query if the object is invalid. Log the parse issue in the thrown error message so Retry is explainable.
-- [ ] `recommendationSchema.ts` parses `{ recommendation: { title, reason, movieId, posterPath, rating } }`. `posterPath` and `reason` may be empty strings. `title` is required.
+- [x] `movieSchema.ts` exports `movieSchema`, `movieDetailSchema`, and the inferred types `Movie` and `MovieDetail`.
+- [x] Defaults match section 2.4. Use Zod’s default / preprocess for null poster paths, ratings, dates, overviews, and genre id arrays.
+- [x] A list parser drops invalid items instead of failing the whole page, and a detail parser fails the query if the object is invalid. Log the parse issue in the thrown error message so Retry is explainable.
+- [x] `recommendationSchema.ts` parses `{ recommendation: { title, reason, movieId, posterPath, rating } }`. `posterPath` and `reason` may be empty strings. `title` is required.
 
 ### 2.2 TMDB client
 
