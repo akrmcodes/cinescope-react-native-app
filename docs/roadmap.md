@@ -597,9 +597,9 @@ Work in this order. Each step is demoable.
 
 ### 4.1 Shared components
 
-- [ ] `MovieCard` matches section 2.2 and 2.3: radius 8, rating badge, two-line title, surface placeholder, movie glyph on error.
-- [ ] `LoadingIndicator` and `ErrorView`.
-- [ ] `ThemeProvider` applies status bar style and a navigation theme built from tokens (background, surface, primary, text). Headers use the surface color, elevation 0.
+- [x] `MovieCard` matches section 2.2 and 2.3: radius 8, rating badge, two-line title, surface placeholder, movie glyph on error.
+- [x] `LoadingIndicator` and `ErrorView`.
+- [x] `ThemeProvider` applies status bar style and a navigation theme built from tokens (background, surface, primary, text). Headers use the surface color, elevation 0.
 
 ### 4.2 Splash and login
 
