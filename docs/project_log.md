@@ -2,6 +2,29 @@
 
 Newest entries first.
 
+## 2026-10-13 — Phase 4 validation gate
+
+**Phase:** Phase 4 validation gate  
+**Status:** Done
+
+### What changed
+
+- [`app/_layout.tsx`](../app/_layout.tsx) — root stack order is `index`, `login`, `(app)`, `search`, `movie/[id]`, with `initialRouteName: 'index'`. Sign in opens the tab shell instead of Search. The tab bar (Home, Browse, Watchlist, Watched, Settings) mounts with the shell.
+- [`app.json`](../app.json) — `userInterfaceStyle` is `automatic` so the light theme is not forced dark by the OS.
+- [`SnackbarBanner.tsx`](../src/core/ui/SnackbarBanner.tsx) — removed `shadowColor: '#000'`. Screen styles have no hex outside [`tokens.ts`](../src/core/theme/tokens.ts). Native splash/icon colors remain in `app.json`. Rating badge keeps the roadmap `rgba(0,0,0,0.54)` overlay.
+- Detail overview renders the API string only (no extra empty-state sentence).
+
+### Flutter comparison (source read, not a side-by-side emulator session)
+
+Copy matches the Flutter views for Home, Browse, Search, Detail meta/Synopsis, Watchlist, Watched, and Settings. Intentional difference: login button is **Sign in** (roadmap), Flutter says **Sign in with Google**.
+
+### Experiment note
+
+- Time spent: (fill after review)
+- Comprehension `app/(app)/_layout.tsx`: (fill after review) — five `Tabs.Screen` entries set labels, icons, and the Home-only search button that pushes `/search`.
+- Comprehension `HomeScreen.tsx`: (fill after review) — focus refetch, Staff Pick only on success, trending and popular sections with their own loading and error states.
+- Confusing part: declaring only `search` on the root `Stack` made Expo Router treat Search as the first screen, so `replace('/(app)')` never showed the tabs.
+
 ## 2026-10-13 — Phase 4.10 Navigation pass
 
 **Phase:** Phase 4.10  

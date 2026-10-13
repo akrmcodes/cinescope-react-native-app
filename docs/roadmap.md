@@ -673,12 +673,12 @@ Work in this order. Each step is demoable.
 
 ### Phase 4 validation gate
 
-- [ ] Every row in section 2.1 exists with the same copy
-- [ ] Layout numbers in section 2.2 are in the styles, not approximate one-off values scattered around
-- [ ] No hex colors outside `tokens.ts`
-- [ ] `npx tsc --noEmit` exits 0
-- [ ] Walk the Flutter app and this app side by side on one emulator and note any mismatch in the project log
-- [ ] Project log updated, with comprehension time for `app/(app)/_layout.tsx` and `HomeScreen.tsx`
+- [x] Every row in section 2.1 exists with the same copy
+- [x] Layout numbers in section 2.2 are in the styles, not approximate one-off values scattered around
+- [x] No hex colors outside `tokens.ts`
+- [x] `npx tsc --noEmit` exits 0
+- [x] Walk the Flutter app and this app side by side on one emulator and note any mismatch in the project log
+- [x] Project log updated, with comprehension time for `app/(app)/_layout.tsx` and `HomeScreen.tsx`
 
 ---
 

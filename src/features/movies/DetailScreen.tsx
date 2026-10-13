@@ -129,9 +129,7 @@ function DetailContent({ detail }: { detail: MovieDetail }) {
           </ScrollView>
         ) : null}
         <Text style={[styles.sectionTitle, { color: tokens.text }]}>Synopsis</Text>
-        <Text style={[styles.overview, { color: tokens.textMuted }]}>
-          {detail.overview || 'No overview available.'}
-        </Text>
+        <Text style={[styles.overview, { color: tokens.textMuted }]}>{detail.overview}</Text>
       </View>
     </ScrollView>
   );
